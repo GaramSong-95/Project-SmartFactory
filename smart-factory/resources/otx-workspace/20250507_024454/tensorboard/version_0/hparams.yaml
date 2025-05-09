@@ -1,0 +1,131 @@
+auto_num_workers: false
+data_format: imagenet_with_subset_dirs
+data_root: /home/garamsong/workspace/smart-factory/resources/bottlecap
+device: auto
+ignore_index: 255
+image_color_channel: RGB
+include_polygons: false
+input_size_multiplier: 1
+mem_cache_img_max_size: !!python/tuple
+- 500
+- 500
+mem_cache_size: 1GB
+task: MULTI_CLASS_CLS
+test_subset: !!python/object:otx.core.config.data.SubsetConfig
+  batch_size: 64
+  input_size: null
+  num_workers: 2
+  sampler: !!python/object:otx.core.config.data.SamplerConfig
+    class_path: torch.utils.data.RandomSampler
+    init_args: {}
+  subset_name: test
+  to_tv_image: false
+  transform_lib_type: !!python/object/apply:otx.core.types.transformer_libs.TransformLibType
+  - TORCHVISION
+  transforms:
+  - class_path: otx.core.data.transform_libs.torchvision.Resize
+    init_args:
+      is_numpy_to_tvtensor: true
+      scale: $(input_size)
+  - class_path: torchvision.transforms.v2.ToDtype
+    init_args:
+      dtype: &id001 ${as_torch_dtype:torch.float32}
+      scale: false
+  - class_path: torchvision.transforms.v2.Normalize
+    init_args:
+      mean:
+      - 123.675
+      - 116.28
+      - 103.53
+      std:
+      - 58.395
+      - 57.12
+      - 57.375
+tile_config: !!python/object:otx.core.config.data.TileConfig
+  enable_adaptive_tiling: true
+  enable_tiler: false
+  iou_threshold: 0.45
+  max_num_instances: 1500
+  object_tile_ratio: 0.03
+  overlap: 0.2
+  sampling_ratio: 1.0
+  tile_size: !!python/tuple
+  - 400
+  - 400
+  with_full_img: false
+train_subset: !!python/object:otx.core.config.data.SubsetConfig
+  batch_size: 64
+  input_size: null
+  num_workers: 2
+  sampler: !!python/object:otx.core.config.data.SamplerConfig
+    class_path: otx.algo.samplers.balanced_sampler.BalancedSampler
+    init_args: {}
+  subset_name: train
+  to_tv_image: false
+  transform_lib_type: !!python/object/apply:otx.core.types.transformer_libs.TransformLibType
+  - TORCHVISION
+  transforms:
+  - class_path: otx.core.data.transform_libs.torchvision.RandomResizedCrop
+    init_args:
+      scale: $(input_size)
+  - class_path: otx.core.data.transform_libs.torchvision.PhotoMetricDistortion
+    enable: false
+  - class_path: otx.core.data.transform_libs.torchvision.RandomAffine
+    enable: false
+  - class_path: otx.core.data.transform_libs.torchvision.RandomFlip
+    init_args:
+      is_numpy_to_tvtensor: true
+      prob: 0.5
+  - class_path: torchvision.transforms.v2.RandomVerticalFlip
+    enable: false
+  - class_path: torchvision.transforms.v2.GaussianBlur
+    enable: false
+    init_args:
+      kernel_size: 5
+  - class_path: torchvision.transforms.v2.ToDtype
+    init_args:
+      dtype: *id001
+      scale: false
+  - class_path: torchvision.transforms.v2.Normalize
+    init_args:
+      mean:
+      - 123.675
+      - 116.28
+      - 103.53
+      std:
+      - 58.395
+      - 57.12
+      - 57.375
+  - class_path: torchvision.transforms.v2.GaussianNoise
+    enable: false
+unannotated_items_ratio: 0.0
+val_subset: !!python/object:otx.core.config.data.SubsetConfig
+  batch_size: 64
+  input_size: null
+  num_workers: 2
+  sampler: !!python/object:otx.core.config.data.SamplerConfig
+    class_path: torch.utils.data.RandomSampler
+    init_args: {}
+  subset_name: val
+  to_tv_image: false
+  transform_lib_type: !!python/object/apply:otx.core.types.transformer_libs.TransformLibType
+  - TORCHVISION
+  transforms:
+  - class_path: otx.core.data.transform_libs.torchvision.Resize
+    init_args:
+      is_numpy_to_tvtensor: true
+      scale: $(input_size)
+  - class_path: torchvision.transforms.v2.ToDtype
+    init_args:
+      dtype: *id001
+      scale: false
+  - class_path: torchvision.transforms.v2.Normalize
+    init_args:
+      mean:
+      - 123.675
+      - 116.28
+      - 103.53
+      std:
+      - 58.395
+      - 57.12
+      - 57.375

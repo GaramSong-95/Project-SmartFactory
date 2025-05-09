@@ -1,0 +1,4 @@
+[gui_scripts]
+iotdemo-color-detector = iotdemo.tuning.color.color:main
+iotdemo-motion-detector = iotdemo.tuning.motion:trampoline
+
