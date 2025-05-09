@@ -1,5 +1,8 @@
 # Project-SmartFactory
-스마트 팩토리 프로젝트
+
+## 실행 방법
+smart-factory 내의 readme를 따라 환경설정 후 arduino 디렉토리 내에서 $ make init, $ make build, $ make flash 순으로 명령 실행.
+그 후 smart-factory내의 factory.py 실행.
 
 ## 프로젝트 개요
 
