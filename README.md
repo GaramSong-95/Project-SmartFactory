@@ -1,5 +1,18 @@
 # Project-SmartFactory
-스마트 팩토리 프로젝트
+
+![image](https://github.com/user-attachments/assets/dd5ef29f-0fd9-4608-bd37-edbe52ff2812)
+
+![20250508_090039](https://github.com/user-attachments/assets/23c348de-7685-4770-a19a-71248c354326)
+
+![20250508_090059](https://github.com/user-attachments/assets/bd1d6951-a3c7-4b2a-a308-2f9730dd5610)
+
+![20250508_090106](https://github.com/user-attachments/assets/e3045f1f-c636-46cc-b4e6-0beb3be16101)
+
+
+
+## 실행 방법
+smart-factory 내의 readme를 따라 환경설정 후 arduino 디렉토리 내에서 $ make init, $ make build, $ make flash 순으로 명령 실행.
+그 후 smart-factory내의 factory.py 실행.
 
 ## 프로젝트 개요
 
