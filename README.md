@@ -6,7 +6,6 @@
 
 ![20250508_090059](https://github.com/user-attachments/assets/bd1d6951-a3c7-4b2a-a308-2f9730dd5610)
 
-![20250508_090106](https://github.com/user-attachments/assets/e3045f1f-c636-46cc-b4e6-0beb3be16101)
 
 
 
