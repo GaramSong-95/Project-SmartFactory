@@ -1,0 +1,6 @@
+otx train --config 모델경로 --data_root 데이터경로 --max_epochs 10 --work_dir 저장경로
+--> 트레이닝하기 위한 명령어
+otx export --config 모델경로 --data_root 데이터경로 --work_dir 저장경로 --checkpoint otx-workspace/트레이닝한디렉터리/best_checkpoint.ckpt (트레이닝한 디렉토리의 ckpt파일을 경로로 지정해준다.)
+--> 모델을 생성하기 위한 명령 xml,bin 확장자로 모델이 생성된다.
+
+이렇게 만든 모델을 스마트팩토리에 사용하였다.
