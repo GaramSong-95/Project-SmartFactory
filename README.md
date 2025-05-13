@@ -7,7 +7,17 @@
 ![20250508_090059](https://github.com/user-attachments/assets/bd1d6951-a3c7-4b2a-a308-2f9730dd5610)
 
 
+## ⚙️ 사용 기술 스택
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OpenVINO-0099CC?style=for-the-badge&logo=intel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MobileNetV3-4479A1?style=for-the-badge&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/OTX-FF6F00?style=for-the-badge&logo=openvino&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Logitech%20C270%20HD-C92228?style=for-the-badge&logo=logitech&logoColor=white"/>
+  <img src="https://img.shields.io/badge/iotdem--color-00B8D4?style=for-the-badge&logo=palette&logoColor=white"/>
+</p>
 
 ## 실행 방법
 smart-factory 내의 readme를 따라 환경설정 후 arduino 디렉토리 내에서 $ make init, $ make build, $ make flash 순으로 명령 실행.
